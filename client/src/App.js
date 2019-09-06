@@ -25,7 +25,7 @@ class App extends React.Component {
           This app pulls data about the Women's World Cup players ranked by
           search interest from Google Trends.
         </p>
-        <Players />
+        <Players data={this.state.data} />
       </div>
     );
   }

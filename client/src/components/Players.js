@@ -5,7 +5,9 @@ import PlayerCard from './PlayerCard';
 export default function Players(props) {
   return (
     <div>
-      <PlayerCard />
+      {props.data.map(player => (
+        <PlayerCard key={player.id} data={player} />
+      ))}
     </div>
   );
 }
