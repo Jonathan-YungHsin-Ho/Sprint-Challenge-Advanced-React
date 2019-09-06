@@ -7,8 +7,17 @@ export default function PlayerCard(props) {
         href={`http://www.google.com/search?q=${props.data.name
           .split(' ')
           .join('+')}`}
-        target='_blank'>
-        <h3>⚽ {props.data.name} ⚽</h3>
+        target='_blank'
+        rel='noopener noreferrer'>
+        <h3>
+          <span role='img' aria-label='soccer ball emoji'>
+            ⚽
+          </span>{' '}
+          {props.data.name}{' '}
+          <span role='img' aria-label='soccer ball emoji'>
+            ⚽
+          </span>
+        </h3>
         <p>{props.data.country}</p>
         <p>Google Searches: {props.data.searches}</p>
       </a>
