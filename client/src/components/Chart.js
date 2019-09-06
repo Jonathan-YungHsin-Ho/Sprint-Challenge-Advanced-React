@@ -1,18 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from 'recharts';
+import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export default function Chart(props) {
-  // const [countryData, setCountryData] = useState([]);
-
   const countries = [];
   props.data.forEach(info => countries.push(info.country));
 
@@ -40,7 +29,7 @@ export default function Chart(props) {
         margin={{
           top: 5,
           right: 30,
-          left: 20,
+          left: 0,
           bottom: 5,
         }}>
         <CartesianGrid strokeDasharray='3 3' />
