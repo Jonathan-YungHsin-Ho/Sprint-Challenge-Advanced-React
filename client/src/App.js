@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+import Players from './components/Players';
+
+class App extends React.Component {
+  state = {
+    data: [],
+  };
+
+  componentDidMount() {
+    fetch('http://localhost:5000/api/players')
+      .then(res => res.json())
+      .then(res => this.setState({ data: res }))
+      .catch(err => console.log(err));
+  }
+
+  render() {
+    console.log(this.state.data);
+    return (
+      <div className='App'>
+        <h2>Google Trends: Women's World Cup Players</h2>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This app pulls data about the Women's World Cup players ranked by
+          search interest from Google Trends.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <Players />
+      </div>
+    );
+  }
 }
 
 export default App;
