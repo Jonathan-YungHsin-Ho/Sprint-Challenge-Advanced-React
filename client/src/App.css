@@ -1,3 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+}
+
+.navbar {
+  border-bottom: 2px solid gray;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3%;
+}
+
+.navbar h1 {
+  margin: 10px;
+}
+
+.dark-mode {
+  color: #fff;
+  background-color: #313843;
+}
+
+.dark-mode .navbar {
+  background-color: #1f2022;
+}
+
+.players-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.player-card {
+  width: 200px;
+  border: 1px solid gray;
+  padding: 15px 3%;
+  margin: 20px 2%;
+  border-radius: 3%;
 }

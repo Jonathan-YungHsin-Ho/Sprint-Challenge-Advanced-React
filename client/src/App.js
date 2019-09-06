@@ -2,6 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
+import Nav from './components/Nav';
 import Players from './components/Players';
 
 class App extends React.Component {
@@ -17,14 +18,9 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.data);
     return (
       <div className='App'>
-        <h2>Google Trends: Women's World Cup Players</h2>
-        <p>
-          This app pulls data about the Women's World Cup players ranked by
-          search interest from Google Trends.
-        </p>
+        <Nav />
         <Players data={this.state.data} />
       </div>
     );
