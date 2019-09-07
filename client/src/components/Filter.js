@@ -11,12 +11,10 @@ export default function Filter(props) {
       }
     });
 
-  // console.log(countries);
-
   return (
     <div>
       <select onChange={props.handleSelect}>
-        <option>Click to filter by country...</option>
+        <option value={''}>Click to filter by country...</option>
         <option value={''}>Show all</option>
         {countries.map(element => (
           <option key={element} value={element}>
