@@ -76,6 +76,7 @@ button {
   background-color: #001b3a;
   color: #bcd2e8;
   cursor: pointer;
+  font: inherit;
 }
 
 button:hover {
@@ -100,4 +101,18 @@ a {
 
 .chart-wrapper h2 {
   margin-bottom: 20px;
+}
+
+.filter-search {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+select {
+  padding: 5px 2%;
+  margin: 10px;
+  font-family: inherit;
 }

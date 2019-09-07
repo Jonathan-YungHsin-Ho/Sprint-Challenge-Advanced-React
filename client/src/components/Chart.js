@@ -2,22 +2,19 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export default function Chart(props) {
-  const countries = [];
-  props.data.forEach(info => countries.push(info.country));
+  const countries = props.data.map(info => info.country);
 
-  const countryData = {};
-  for (let i = 0; i < countries.length; i++) {
-    countryData[countries[i]] = 1 + (countryData[countries[i]] || 0);
-  }
+  const countryCounts = {};
+  countries.map(country => {
+    countryCounts[country] = 1 + (countryCounts[country] || 0);
+  });
 
-  const countryArr = Object.entries(countryData).map(country => {
+  const countryArr = Object.entries(countryCounts).map(country => {
     return {
       country: country[0],
       players: country[1],
     };
   });
-
-  console.log(countryArr);
 
   return (
     <div className='chart-wrapper'>
